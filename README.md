@@ -1,4 +1,4 @@
-# pkg-placeholder
+# eslint-config
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -6,19 +6,11 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-_description_
-
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
-</p>
+My eslint config
 
 ## License
 
-[MIT](./LICENSE) License © [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License © [Anthony Fu](https://github.com/skyline523)
 
 <!-- Badges -->
 
