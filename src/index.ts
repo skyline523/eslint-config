@@ -1,23 +1,37 @@
 import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
-import antfu from '@antfu/eslint-config'
-import { antfuOptions } from './antfu'
-import { baseConfig } from './base'
-import { tailwindConfig } from './tailwind'
+import type { ExtarOptionsConfig } from './types'
 
-function leet(options?: OptionsConfig & TypedFlatConfigItem, ...configs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]) {
+import antfu from '@antfu/eslint-config'
+import { isPackageExists } from 'local-pkg'
+
+import { antfuOptions } from './configs/antfu'
+import { baseConfig } from './configs/base'
+import { tailwindcss } from './configs/tailwindcss'
+
+function leet(
+  options: OptionsConfig & ExtarOptionsConfig = {},
+  ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]
+) {
+  const {
+    tailwindcss: enabledTailwindcss = isPackageExists('tailwindcss'),
+  } = options
+
+  const configs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[] = [
+    baseConfig,
+  ]
+
+  if (enabledTailwindcss) {
+    configs.push(tailwindcss())
+  }
+
   return antfu(
     {
       ...antfuOptions,
       ...options,
     },
-    baseConfig,
     ...configs,
+    ...userConfigs,
   )
 }
 
-const tailwind = tailwindConfig
-
-export {
-  leet,
-  tailwind,
-}
+export default leet
