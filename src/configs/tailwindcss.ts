@@ -1,7 +1,11 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
-import { interopDefault } from '../utils'
+import { ensurePackages, interopDefault } from '../utils'
 
 export async function tailwindcss(): Promise<TypedFlatConfigItem[]> {
+  await ensurePackages([
+    'eslint-plugin-tailwindcss',
+  ])
+
   const [
     pluginTailwind,
   ] = await Promise.all([

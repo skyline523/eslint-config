@@ -2,7 +2,6 @@ import type { Awaitable, OptionsConfig, TypedFlatConfigItem } from '@antfu/eslin
 import type { ExtarOptionsConfig } from './types'
 
 import antfu from '@antfu/eslint-config'
-import { isPackageExists } from 'local-pkg'
 
 import { antfuOptions } from './configs/antfu'
 import { baseConfig } from './configs/base'
@@ -13,7 +12,7 @@ function leet(
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]
 ) {
   const {
-    tailwindcss: enabledTailwindcss = isPackageExists('tailwindcss'),
+    tailwindcss: enabledTailwindcss = false,
   } = options
 
   const configs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[] = [
