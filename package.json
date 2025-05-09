@@ -36,13 +36,15 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
+    "gen": "tsx scripts/typegen.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.13.0",
-    "eslint-plugin-format": "^1.0.1"
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-typegen": "^2.1.0"
   },
   "devDependencies": {
     "@antfu/ni": "^24.1.0",
@@ -53,7 +55,9 @@
     "eslint": "^9.22.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "lint-staged": "^15.5.0",
+    "local-pkg": "^1.1.1",
     "simple-git-hooks": "^2.11.1",
+    "tailwindcss": "^3.4.17",
     "tinyexec": "^0.3.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
