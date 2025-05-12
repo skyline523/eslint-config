@@ -1,6 +1,6 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 
-const baseConfig: TypedFlatConfigItem | TypedFlatConfigItem[] = [
+export const baseConfig: TypedFlatConfigItem | TypedFlatConfigItem[] = [
   {
     name: 'leet/base',
     rules: {
@@ -8,7 +8,3 @@ const baseConfig: TypedFlatConfigItem | TypedFlatConfigItem[] = [
     },
   },
 ]
-
-export {
-  baseConfig,
-}
