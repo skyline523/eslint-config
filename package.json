@@ -3,16 +3,15 @@
   "type": "module",
   "version": "0.0.2",
   "packageManager": "pnpm@10.6.2",
-  "description": "_description_",
+  "description": "ESlint config for Leet",
   "author": "Leet <1414395519@qq.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/pkg-placeholder#readme",
+  "homepage": "https://github.com/skyline523/eslint-config/#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/pkg-placeholder.git"
+    "url": "git+https://github.com/skyline523/eslint-config.git"
   },
-  "bugs": "https://github.com/antfu/pkg-placeholder/issues",
+  "bugs": "https://github.com/skyline523/eslint-config/issues",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -70,14 +69,11 @@
     "lint-staged": "^15.5.0",
     "local-pkg": "^1.1.1",
     "simple-git-hooks": "^2.11.1",
-    "tinyexec": "^0.3.2",
     "tsdown": "^0.11.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "vite": "^6.2.1",
     "vitest": "^3.0.8",
-    "vitest-package-exports": "^0.1.1",
-    "yaml": "^2.7.0"
+    "vitest-package-exports": "^0.1.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
