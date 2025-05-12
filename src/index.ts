@@ -8,7 +8,7 @@ import { baseConfig } from './configs/base'
 import { tailwindcss } from './configs/tailwindcss'
 
 function leet(
-  options: OptionsConfig & ExtarOptionsConfig = {},
+  options: Omit<OptionsConfig, 'react'> & ExtarOptionsConfig = {},
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]
 ) {
   const {
