@@ -1,7 +1,7 @@
 {
   "name": "@leet/eslint-config",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@10.6.2",
   "description": "_description_",
   "author": "Leet <1414395519@qq.com>",
