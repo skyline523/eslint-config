@@ -6,7 +6,7 @@ import type { ExtarOptionsConfig } from './types'
 
 import antfu from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
-import { baseConfig, tailwindcss } from './configs'
+import { baseConfig, reactOverrides, tailwindcss } from './configs'
 
 const ReactPackages = [
   'react',
@@ -40,7 +40,7 @@ export default function leet(
 
   if (enableReact) {
     options.react = {
-      overrides: getOverrides(userOptions, 'react'),
+      overrides: getMergedOverrides(reactOverrides, getOverrides(userOptions, 'react')),
     }
   }
 
@@ -77,5 +77,15 @@ export function getOverrides<K extends keyof OptionsConfig>(
     ...'overrides' in sub
       ? sub.overrides
       : {},
+  }
+}
+
+export function getMergedOverrides(
+  base: Partial<Linter.RulesRecord & RuleOptions> = {},
+  overrides: Partial<Linter.RulesRecord & RuleOptions> = {},
+): Partial<Linter.RulesRecord & RuleOptions> {
+  return {
+    ...base,
+    ...overrides,
   }
 }
