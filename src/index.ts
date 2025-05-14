@@ -40,7 +40,10 @@ export default function leet(
 
   if (enableReact) {
     options.react = {
-      overrides: getMergedOverrides(reactOverrides, getOverrides(userOptions, 'react')),
+      overrides: getMergedOverrides(
+        reactOverrides,
+        getOverrides(userOptions, 'react'),
+      ),
     }
   }
 
