@@ -30,7 +30,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown --clean --dts",
+    "build": "nr gen && tsdown --clean --dts",
     "dev": "npx @eslint/config-inspector",
     "lint": "eslint",
     "prepublishOnly": "nr build",
@@ -79,7 +79,7 @@
     "vitest-package-exports": "^0.1.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
