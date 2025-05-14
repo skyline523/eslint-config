@@ -1,7 +1,10 @@
 {
-  "name": "@leet/eslint-config",
+  "name": "@leet11/eslint-config",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "publishConfig": {
+    "access": "public"
+  },
   "packageManager": "pnpm@10.6.2",
   "description": "ESlint config for Leet",
   "author": "Leet <1414395519@qq.com>",
