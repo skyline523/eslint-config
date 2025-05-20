@@ -1,3 +1,5 @@
 import leet from './src/index'
 
-export default leet()
+export default leet({
+  pnpm: true,
+})
